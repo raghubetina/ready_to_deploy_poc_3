@@ -18,8 +18,20 @@
       <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.body %></td>
-        <td><%= comment.commenter.username %></td>
-        <td><%= comment.photo.caption %></td>
+        <td>
+          <% if comment.commenter.present? %>
+            <a href="/users/<%= comment.commenter.id %>">
+              <%= comment.commenter.username %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if comment.photo.present? %>
+            <a href="/photos/<%= comment.photo.id %>">
+              <%= comment.photo.caption %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/comments/<%= comment.id %>" class="btn btn-primary">Show</a>
           

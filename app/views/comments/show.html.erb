@@ -9,10 +9,22 @@
       <dd><%= @comment.body %></dd>
 
       <dt>Commenter</dt>
-      <dd><%= @comment.commenter_id %></dd>
+      <dd>
+        <% if @comment.commenter.present? %>
+          <a href="/users/<%= @comment.commenter_id %>">
+            <%= @comment.commenter.username %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Photo</dt>
-      <dd><%= @comment.photo_id %></dd>
+      <dd>
+        <% if @comment.photo.present? %>
+          <a href="/photos/<%= @comment.photo_id %>">
+            <%= @comment.photo.caption %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
