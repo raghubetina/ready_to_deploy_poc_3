@@ -62,6 +62,23 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_like" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for photo_id -->
+      <input type="hidden" name="photo_id" value="<%= @photo.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Like
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -93,6 +110,32 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_comment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for commenter_id -->
+      <input type="hidden" name="commenter_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for photo_id -->
+      <input type="hidden" name="photo_id" value="<%= @photo.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Comment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
