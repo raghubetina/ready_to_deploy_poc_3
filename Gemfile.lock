@@ -1,34 +1,4 @@
 GIT
-  remote: https://github.com/activeadmin/activeadmin.git
-  revision: a932d56b156eaf64beb86cb45f8f801b7933c42e
-  ref: a932d56b156eaf64beb86cb45f8f801b7933c42e
-  specs:
-    activeadmin (1.0.0.pre4)
-      arbre (~> 1.0, >= 1.0.2)
-      bourbon
-      coffee-rails
-      formtastic (~> 3.1)
-      formtastic_i18n
-      inherited_resources (~> 1.6)
-      jquery-rails
-      jquery-ui-rails
-      kaminari (~> 0.15)
-      railties (>= 3.2, < 5.1)
-      ransack (~> 1.3)
-      sass-rails
-      sprockets (< 4.1)
-
-GIT
-  remote: https://github.com/activeadmin/inherited_resources.git
-  revision: 652686148f554fb9ce0ebee5d857b3d3decc0272
-  specs:
-    inherited_resources (1.8.0)
-      actionpack (>= 4.2, <= 5.2)
-      has_scope (~> 0.6)
-      railties (>= 4.2, <= 5.2)
-      responders
-
-GIT
   remote: https://github.com/firstdraft/seed_dump.git
   revision: 08707d80fa0d9776b2118fbdabd66f9548181e0a
   specs:
@@ -69,6 +39,18 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activeadmin (1.2.1)
+      arbre (>= 1.1.1)
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.7)
+      jquery-rails (>= 4.2.0)
+      kaminari (>= 0.15, < 2.0)
+      railties (>= 4.2, < 5.2)
+      ransack (~> 1.3)
+      sass (~> 3.1)
+      sprockets (< 4.1)
     activejob (5.0.6)
       activesupport (= 5.0.6)
       globalid (>= 0.3.6)
@@ -96,9 +78,6 @@ GEM
     bootstrap4-kaminari-views (1.0.0)
       kaminari (>= 0.13)
       rails (>= 3.1)
-    bourbon (5.0.0)
-      sass (~> 3.4)
-      thor (~> 0.19)
     builder (3.2.3)
     byebug (10.0.0)
     carrierwave (1.2.2)
@@ -147,6 +126,11 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    inherited_resources (1.8.0)
+      actionpack (>= 4.2, <= 5.2)
+      has_scope (~> 0.6)
+      railties (>= 4.2, <= 5.2)
+      responders
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -154,11 +138,18 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
-      railties (>= 3.2.16)
-    kaminari (0.17.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -281,7 +272,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin!
+  activeadmin
   activerecord-import
   bootstrap3-datetimepicker-rails (~> 4.17.43)
   bootstrap4-kaminari-views
@@ -293,7 +284,6 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 4.5.0)
   gmaps4rails
-  inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
@@ -315,4 +305,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.15.2
+   1.15.4
