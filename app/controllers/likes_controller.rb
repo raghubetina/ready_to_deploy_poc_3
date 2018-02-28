@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :current_user_must_be_like_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_like_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_like_user
     like = Like.find(params[:id])
