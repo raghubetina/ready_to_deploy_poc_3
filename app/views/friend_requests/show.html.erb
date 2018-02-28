@@ -20,12 +20,14 @@
       <a href="/friend_requests" class="btn btn-primary">
         Back
       </a>
-      <a href="/friend_requests/<%= @friend_request.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_friend_request/<%= @friend_request.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @friend_request.sender %>
+        <a href="/friend_requests/<%= @friend_request.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_friend_request/<%= @friend_request.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
