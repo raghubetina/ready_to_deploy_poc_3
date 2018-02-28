@@ -28,13 +28,7 @@
       </div>
 
       <!-- Label and input for commenter_id -->
-      <div class="form-group">
-        <label for="commenter_id" class="control-label">
-          Commenter
-        </label>
-
-        <%= select_tag(:commenter_id, options_from_collection_for_select(User.all, :id, :username, @comment.commenter_id), :class => "form-control") %>
-      </div>
+      <input type="hidden" name="commenter_id" value="<%= current_user.id %>">
 
       <!-- Label and input for photo_id -->
       <div class="form-group">
